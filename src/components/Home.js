@@ -14,6 +14,13 @@ export default function Home() {
     setPosts(data.posts);
   };
 
+  const getPostsByTag = async (tag_id) => {
+    const url = `http://localhost:3000/api/post?tag=${tag_id}`;
+    const { data } = await axios.get(url);
+    console.log(data);
+    setPosts(data.posts);
+  };
+
   const getTags = async () => {
     const url = 'http://localhost:3000/api/tag';
     const { data } = await axios.get(url);
@@ -30,7 +37,7 @@ export default function Home() {
 
   return (
     <>
-      <TagList tags={tags} />
+      <TagList tags={tags} getPostsByTag={getPostsByTag} />
       <Main posts={posts} />
     </>
   );

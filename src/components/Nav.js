@@ -9,7 +9,7 @@ export default function Nav() {
     >
       <div className="container">
         <Link className="navbar-brand" to="/">
-          효으니의 블로그
+          재후니의 블로그
         </Link>
         <button className="navbar-toggler navbar-toggler-right" type="button">
           Menu
