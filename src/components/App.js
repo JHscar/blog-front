@@ -6,6 +6,7 @@ import Home from './Home';
 import Footer from './Footer';
 import Login from './Login';
 import Post from './Post';
+import Join from './Join';
 
 export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -24,6 +25,7 @@ export default function App() {
       <Route exact path="/" component={Home} />
       <Route path="/login" component={Login} />
       <Route path="/post/:id" component={Post} />
+      <Route path="/join" component={Join} />
       <Footer />
     </BrowserRouter>
   );
