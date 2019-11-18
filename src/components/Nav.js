@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-export default function Nav() {
+export default function Nav({ isLoggedIn, setIsLoggedIn, setIsAdmin }) {
+  const logout = () => {
+    document.cookie = `Authorization=;expires=${new Date().toUTCString()}`;
+    setIsLoggedIn(false);
+    setIsAdmin(false);
+  };
+
+  useEffect(() => {
+    setIsLoggedIn(document.cookie.includes('Authorization'));
+  }, []);
   return (
     <nav
       className="navbar navbar-expand-lg navbar-light fixed-top"
@@ -9,7 +18,7 @@ export default function Nav() {
     >
       <div className="container">
         <Link className="navbar-brand" to="/">
-          효으니의 블로그
+          재후니의 블로그
         </Link>
         <button className="navbar-toggler navbar-toggler-right" type="button">
           Menu
@@ -23,9 +32,11 @@ export default function Nav() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/login">
-                로그인
-              </Link>
+              {isLoggedIn ? (
+                <a className="nav-link" onClick={logout}>로그아웃</a>
+              ) : (
+                <Link className="nav-link" to="/login">로그인</Link>
+              )}
             </li>
           </ul>
         </div>
