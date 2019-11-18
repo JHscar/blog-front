@@ -1,1 +1,1 @@
-export const localURL = 'http://localhost:3000';
+export const localURL = 'https://jh93-blog.herokuapp.com';

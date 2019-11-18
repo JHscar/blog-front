@@ -10,7 +10,7 @@ export default function Header() {
           <div className="col-lg-8 col-md-10 mx-auto">
             <div className="site-heading">
               <h1>JaeHun's Blog</h1>
-              <span className="subheading">개발왕이 되고싶다</span>
+              <span className="subheading">개발킹이 되고싶다</span>
             </div>
           </div>
         </div>

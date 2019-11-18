@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function Main({ posts }) {
+export default function Main({ posts, getNextPage }) {
   return (
     <div className="container">
       <div className="row">
@@ -16,9 +16,9 @@ export default function Main({ posts }) {
               </div>
             ))}
           <div className="clearfix">
-            <a className="btn btn-primary float-right" href="#">
+            <button type="button" className="btn btn-primary float-right" onClick={() => { getNextPage(); }}>
               Older Posts &rarr;
-            </a>
+            </button>
           </div>
         </div>
       </div>
